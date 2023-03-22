@@ -1,14 +1,18 @@
-
+from venv import juego
+from clases import*
 from clases import Conventions
 from clases import Case
 from itertools import product, repeat
 from random import choice
 
-from juego import HORIZONTAL, LONGITUDES_BARCOS, ORIENTACIONES
+from juego import HORIZONTAL, ORIENTACIONES
 
 
 instances = []
 casillas_ocupadas = set()
+
+class Barco:
+
 # performance / legibilidad:
 num_lineas = Conventions.tablero_num_lineas
 num_columnas = Conventions.tablero_num_columnas
@@ -16,7 +20,7 @@ num2l = Conventions.generar_num_linea
 num2c = Conventions.generar_num_columna
 
 
-def __init__(self, longitud):
+def __init__(self, longitud, orientacion=choice(ORIENTACIONES), tocado=False, hundido=False):
     self.longitud = longitud
     self.orientacion = choice(ORIENTACIONES)
     self.tocado = False
