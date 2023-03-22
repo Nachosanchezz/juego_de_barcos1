@@ -3,15 +3,18 @@ import sys
 from clases import Barco
 from clases import Case
 from clases import Tablero
-
-
-
+from clases import Conventions
+from random import shuffle, choice, random
+from functools import reduce
+from itertools import cycle, chain, product, repeat
 
 from introducir import (
     solicitar_introducir_si_o_no,
+    solicitar_introducir_numero_extremo,
+    solicitar_introducir_letra,
+    solicitar_introducir_palabra,
     solicitar_introducir_casilla,
 )
-
 
 LONGITUDES_BARCOS = [2, 3, 3, 4, 4, 5]
 ORDINAL = 0x2680

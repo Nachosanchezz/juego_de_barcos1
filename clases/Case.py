@@ -1,15 +1,8 @@
-from numpy import product
-from clases import Barco
-from clases import Tablero
-from clases import Case
-from juego import CASO_AGUA, CASO_NO_JUGADO, CASO_TOCADO
-from clases.Conventions import (
-    tablero_num_lineas,
-    tablero_num_columnas,
-    generar_num_linea,
-    generar_num_columna,
-    generar_nombre_casilla
-)
+from itertools import product
+from juego import CASO_NO_JUGADO, CASO_AGUA, CASO_TOCADO
+from clases import Barco, Conventions, Case, Tablero
+
+
 instances = {}
 jugadas = set()
 

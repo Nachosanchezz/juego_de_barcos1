@@ -1,14 +1,9 @@
-from itertools import product
-from clases import Conventions
-from clases import Case
-from clases.Barco import generar_barcos
-from clases.Case import generar_casillas
+from .Case import *
+from .Barco import *
+from .Conventions *
 
-  # performance / legibilidad:
-  num_lineas = Conventions.tablero_num_lineas
-  num_columnas = Conventions.tablero_num_columnas
-  num2l = Conventions.generar_num_linea
-  num2c = Conventions.generar_num_columna
+class Tablero ():
+
 
 @staticmethod
 def __init__(self):
@@ -16,6 +11,13 @@ def __init__(self):
   generar_casillas()
 # Creamos los barcos:
   generar_barcos()
+
+# performance / legibilidad:
+  num_lineas = Conventions.tablero_num_lineas
+  num_columnas = Conventions.tablero_num_columnas
+  num2l = Conventions.generar_num_linea
+  num2c = Conventions.generar_num_columna
+
  # Creamos la herramienta para poder seguir la situación
   self.casillas_jugadas = set()
   self.casillas_tocadas = set()
