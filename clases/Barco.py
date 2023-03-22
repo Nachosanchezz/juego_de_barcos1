@@ -4,7 +4,6 @@ from clases import Conventions
 from clases import Case
 from itertools import product, repeat
 from random import choice
-
 from juego import HORIZONTAL, ORIENTACIONES
 
 
@@ -14,9 +13,9 @@ casillas_ocupadas = set()
 class Barco:
     def __init__(self, longitud, orientacion=choice(ORIENTACIONES), tocado=False, hundido=False):
         self.longitud = longitud
-        self.orientacion = choice(ORIENTACIONES)
-        self.tocado = False
-        self.hundido = False
+        self.orientacion = orientacion
+        self.tocado = tocado
+        self.hundido = hundido
 
 
 # performance / legibilidad:
@@ -54,39 +53,12 @@ class Barco:
         else:
             raise ValueError("No se pudo crear el barco")
         
-
-
-def instanciar(self):
-    for existente in instances:
-        if self.casillas.intersection(existente.casillas):
-            # break relativo al "for existente in barcos:"
-            break
-        else:
-            # Agregar el barco en el contenedor de barcos
-            instances.append(self)
-            # Informar la casilla que contiene un barco.
-            for casilla in self.casillas:
-                casilla.contiene_barco = True
-            # Agregar estas casillas a las casillas ocupadas :
-            casillas_ocupadas.update(self.casillas)
-            # break relativo al "for existente in barcos:"
-            break
-    else:
-        # break relativo al "while True:"
-        return
-    
-    
-def generar_barcos(self):
-        while True:
-            self.longitud = choice(Conventions.barcos_longitud)
-            self.orientacion = choice(ORIENTACIONES)
-            self.tocado = False
-            self.hundido = False
-            self.horizontal()
-            self.instanciar()
-            if len(instances) == len(Conventions.barcos_longitud):
-                break
+@classmethod
+def generar_barcos():
+    for longitud in Conventions.LONGITUDES_BARCOS:
+        Barco(longitud)
 
 
 
-        
+
+
